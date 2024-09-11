@@ -21,7 +21,7 @@
     /* special orange */
     --secondary: 41 98% 62%;
     /* light background */
-    --light: 120 100% 95%; /* HSL format without quotes */
+    --light: 120 100% 95%;
     --secondary-foreground: 0 0% 100%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 0 0% 49%;

@@ -13,11 +13,9 @@ export default function PreviewProducts({ product }: PreviewProductsProps) {
     <>
       <div className="absolute inset-0 z-10 flex items-center justify-center bg-opacity-10 rounded-3xl transition-all duration-300 opacity-0 group-hover:opacity-100">
         <span className="flex items-center justify-center text-center rounded-md bg-white border border-[#BCE3C9] divide-x divide-[#BCE3C9]">
-          <Link
-            to="/"
-            className="flex items-center justify-center text-center w-10 h-9">
+          <span className="flex items-center justify-center text-center w-10 h-9">
             <HeartIcon size={20} color="#3BB77E" />
-          </Link>
+          </span>
           <Link
             to="/"
             className="flex items-center justify-center text-center w-10 h-9">
