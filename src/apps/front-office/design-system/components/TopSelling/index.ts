@@ -6,5 +6,5 @@ export type topSellingType = {
   productTitle?: string;
   salePrice?: number;
   priceOld?: number;
-  product: Product;
+  product?: Product;
 };

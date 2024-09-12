@@ -1,3 +1,5 @@
+import { trans } from "@mongez/localization";
+import { Form, getActiveForm } from "@mongez/react-form";
 import { useState } from "react";
 import { Button } from "src/apps/front-office/design-system/components/ui/button";
 import { shopDataAtom } from "../../../atoms/shop-data.atom";
@@ -28,18 +30,19 @@ const PriceRangeSlider = () => {
     }
   };
 
-  const submitHandler = () => e => {
-    e.preventDefault();
+  const submitHandler = () => {
     fetch(`minPrice=${minPrice}&maxPrice=${maxPrice}`);
+    const form = getActiveForm();
+    form?.reset();
   };
 
   return (
     <div className="w-full max-w-xs mx-auto">
       <h2 className="text-lg font-semibold text-gray-800 mb-4">
-        Fill by price
+        {trans("fillByPrice")}
       </h2>
 
-      <form onSubmit={submitHandler()}>
+      <Form onSubmit={submitHandler}>
         <div className="relative pt-1">
           <input
             type="range"
@@ -61,17 +64,19 @@ const PriceRangeSlider = () => {
 
         <div className="flex items-center justify-between mb-2">
           <span className="text-gray-500">
-            From: <span className="text-green-500">${minPrice}</span>
+            {trans("from")}: <span className="text-green-500">${minPrice}</span>
           </span>
           <span className="text-gray-500">
-            To: <span className="text-green-500">${maxPrice}</span>
+            {trans("to")}: <span className="text-green-500">${maxPrice}</span>
           </span>
         </div>
 
-        <Button className="ml-auto block bg-primary text-white py-2 rounded-lg">
-          Apply filter
+        <Button
+          type="submit"
+          className="ml-auto block bg-primary text-white py-2 rounded-lg">
+          {trans("applyFilter")}
         </Button>
-      </form>
+      </Form>
     </div>
   );
 };

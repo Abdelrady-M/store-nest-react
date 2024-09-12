@@ -111,6 +111,9 @@ export default function HomePage() {
   if (loading) {
     return <Loader />;
   }
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <>
