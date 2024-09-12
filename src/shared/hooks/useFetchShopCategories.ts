@@ -1,7 +1,7 @@
 import { useOnce } from "@mongez/react-hooks";
 import { useState } from "react";
+import { getCategories } from "src/apps/front-office/home/services/home-service";
 import { Category } from "src/apps/front-office/utils/types";
-import { getCategory } from "../../apps/front-office/shop/services/shop-service";
 
 export default function useFetchShopCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -9,9 +9,10 @@ export default function useFetchShopCategories() {
   const [error, setError] = useState<string | null>(null);
 
   useOnce(() => {
-    getCategory()
+    getCategories()
       .then(response => {
-        const categories = response?.data;
+        const categories = response?.data.categories;
+        console.log("categories", response);
         setCategories(categories);
       })
       .catch(error => {

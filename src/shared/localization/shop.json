@@ -2,5 +2,13 @@
   "shop": {
     "en": "Shop",
     "ar": "متجر"
+  },
+  "found": {
+    "en": "We found",
+    "ar": "تم العثور على"
+  },
+  "itemsForYou": {
+    "en": " for you!",
+    "ar": "العناصر لك!"
   }
 }

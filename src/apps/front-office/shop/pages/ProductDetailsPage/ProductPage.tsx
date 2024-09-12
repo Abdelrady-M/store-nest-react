@@ -101,7 +101,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       <main className="product-page pt-6 pb-20">
         <div className="container">
           <ProductMainDetails product={data?.product} />
-          {/* <RelatedProducts products={products}/> */}
+          {/* <RelatedProducts products={products} /> */}
         </div>
       </main>
     </>

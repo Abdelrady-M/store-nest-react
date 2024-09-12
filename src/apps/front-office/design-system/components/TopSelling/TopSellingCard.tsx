@@ -1,13 +1,17 @@
+import { Link } from "@mongez/react-router";
 import { Star, StarHalf } from "lucide-react";
+import URLS from "src/apps/front-office/utils/urls";
 import { topSellingType } from "./index";
 export default function TopSellingCard({
   productImageTop,
   productDescription,
+  product,
   salePrice,
   priceOld,
 }: topSellingType) {
   return (
-    <div
+    <Link
+      to={URLS.shop.viewProduct(product!)}
       className="flex items-center gap-5 mb-7 cursor-pointer relative
       group hover:-translate-y-2 duration-700
        small-to-medium:block small-to-medium:m-auto">
@@ -49,6 +53,6 @@ export default function TopSellingCard({
           </h5>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
