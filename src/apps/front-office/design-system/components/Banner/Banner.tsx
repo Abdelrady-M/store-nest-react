@@ -9,7 +9,7 @@ export type BannerProps = {
 function _Banner({ imageUrl, title, Subtitle }: BannerProps) {
   return (
     <div className={`w-full relative`}>
-      <img src={imageUrl} className="w-full" />
+      <img src={imageUrl} className="w-full rounded-lg" />
       <div className="absolute-center">
         <h1 className="font-bold text-xs text-muted-foreground">{title}</h1>
         <p className="text-xl font-bold hover:-translate-y-2 transition-all ease-in-out">

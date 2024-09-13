@@ -1,5 +1,4 @@
 import endpoint from "src/shared/endpoint";
-import { HomeData } from "../../utils/types";
 
 // const currentLanguage = getCurrentLocaleCode();
 
@@ -74,12 +73,8 @@ export function getFooterData() {
   return endpoint.get("/settings");
 }
 
-export async function getHome(): Promise<HomeData> {
-  const response = await endpoint.get("/home");
-  return {
-    meta: response.data.meta,
-    rows: response.data.rows,
-  };
+export function getHome() {
+  return endpoint.get("/home");
 }
 
 export function getCategories(params?: any) {

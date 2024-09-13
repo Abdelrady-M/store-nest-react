@@ -18,6 +18,7 @@ export default function TopSelling({ moduleName }) {
               const data = column.module.products;
               // const title = column.module.title;
               setProductData(data);
+
               // setProductTitle(title);
               return;
             }
@@ -33,7 +34,7 @@ export default function TopSelling({ moduleName }) {
   return (
     <div>
       <div>
-        <TopSellingHead productTitle={moduleName} />
+        <TopSellingHead productTitle={moduleName} product={productData} />
       </div>
       <div>
         {productData.map(el => {
@@ -44,6 +45,7 @@ export default function TopSelling({ moduleName }) {
                 productDescription={el.shortDescription}
                 salePrice={el.salePrice}
                 priceOld={el.price}
+                product={productData}
               />
             </div>
           );

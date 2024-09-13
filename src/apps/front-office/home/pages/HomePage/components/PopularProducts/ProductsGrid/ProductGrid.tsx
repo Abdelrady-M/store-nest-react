@@ -13,7 +13,7 @@ export default function ProductsGrid({ products }: ProductGridProps) {
   );
 }
 
-// [karim]
+// [karim] //fix
 {
   /* <div className="flex flex-wrap"> */
 }

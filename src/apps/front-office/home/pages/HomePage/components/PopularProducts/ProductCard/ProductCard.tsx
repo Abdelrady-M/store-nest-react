@@ -35,8 +35,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
         </div>
-        <Link to={URLS.shop.viewProduct(product)}>
-          <div className="relative p-[25px] pb-0">
+        <div className="relative p-[25px] pb-0">
+          <Link to={URLS.shop.viewProduct(product)}>
             <div className="overflow-hidden flex items-center justify-center cursor-pointer rounded-3xl ">
               <img
                 src={product.images[0]?.url + "?w=200&h=200"}
@@ -44,16 +44,16 @@ export default function ProductCard({ product }: ProductCardProps) {
                 className="max-w-60 max-h-60 group-hover:scale-110 z-10 rounded-full transition ease-in duration-500"
               />
             </div>
-            <PreviewProducts product={product} />
-          </div>
-        </Link>
+          </Link>
+          <PreviewProducts product={product} />
+        </div>
         <div className="px-[20px] pt-[20px] pb-[20px]">
           <span className="flex text-[#adadad] text-[12px] mb-[5px] hover:text-primary cursor-pointer">
             {product.category.name}
           </span>
           <h2>
             <Link
-              to={"/"}
+              to={URLS.shop.viewProduct(product)}
               className="font-bold text-base inline-block text-[#253D4E] hover:text-primary transition duration-500">
               {product.name}
             </Link>

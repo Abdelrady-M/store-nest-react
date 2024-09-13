@@ -7,7 +7,6 @@ import { Row } from "src/apps/front-office/utils/types";
 import { getHome } from "../../services/home-service";
 import PopularProducts from "./components/PopularProducts";
 import "./HomePage.css";
-import usePopularProducts from "./hooks/use-popular-products";
 import DealsDayTwo from "./sections/DealsDayTwo/DealsDayTwo";
 import FeaturedCategories from "./sections/FeaturedCategories";
 import Slider from "./sections/Slider";
@@ -16,13 +15,13 @@ export default function HomePage() {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>("");
-  const { data } = usePopularProducts();
+  // const { data } = usePopularProducts();
   useOnce(() => {
     setLoading(true);
     getHome()
       .then(response => {
-        console.log(response.rows);
-        setRows(response.rows);
+        console.log(response.data.rows);
+        setRows(response.data.rows);
         setLoading(false);
       })
       .catch(error => {
@@ -112,6 +111,9 @@ export default function HomePage() {
   if (loading) {
     return <Loader />;
   }
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <>
@@ -124,7 +126,7 @@ export default function HomePage() {
       {/* <div className="App">
         <DailyBestSellsSection />
       </div> */}
-      {data && <PopularProducts />}
+      <PopularProducts />
       <DealsDayTwo columns={rows[3].columns} />
       {/* <SectionWrapper>
         <Header title="Deals Of The Day" linkText="All Deals" linkHref="#" />
