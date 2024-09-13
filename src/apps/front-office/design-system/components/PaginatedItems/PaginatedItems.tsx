@@ -37,7 +37,7 @@ function PaginatedItems({ items }) {
       <Items currentItems={currentItems} />
       <ReactPaginate
         forcePage={shopDataAtom.use("paginationInfo").page - 1}
-        activeLinkClassName="!bg-primary !text-white !font-bold rounded-full"
+        activeLinkClassName="bg-primary !text-white !font-bold rounded-full"
         nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
